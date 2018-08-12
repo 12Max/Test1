@@ -1,0 +1,70 @@
+- Formel (Zeichenkette) mit Variablen und Werte als Eingabedaten.
+- Formel wird in ein geeigneters Format für die Weiterverarbeitung zerlegt, identifiziert und umgewandet.
+  Dabei werden alle Pseudo-Operatoren auf Vergleichsausdrücke und logische zurückgeführt.
+- Kalkulationsbaum für die Formel bestimmen
+- Variablen für Formel lösen
+- Baum berechnen
+- Ergebnis ausgeben
+ 
+  Beispiel:
+  
+  sia(1234,10) entsprechend
+  
+  search{1234~10*int(AC_[00..14/10])}						   					-> 1) Indexvariablen lösen
+  
+  search{1234~10*int(5334,21;5401,22;9051,50;...1230,45)/10}   					-> 2) FK unwandeln in GZ (Integer)
+  
+  search{1234~10*(5334;5401;9051;...1230)/10}				   					-> 3) Runde auf 10er Zahl
+  
+  search{1230~(5330;5400;9050;...1230)} 					   					-> 4) Vergleiche Zahlen aus der Liste mit Referenzzahl		   
+
+  search = (1230 = 5330) | (1230 = 5400) | (1230 = 9050)  ... | (1230 = 1230)  	-> 5) Ergebnis ermitteln
+
+  search = AC_00 = False oder AC_01 = False oder AC_02 = False  ... oder AC_99 = True  
+  
+  
+  Ergebnis ist TRUE
+  
+  
+  Link:
+  Runden: https://www.frustfrei-lernen.de/mathematik/runden-zahlen-mathematik.html
+  Parser: https://de.wikipedia.org/wiki/Parser
+  Token: https://de.wikipedia.org/wiki/Token_(%C3%9Cbersetzerbau)
+  reguläre Grammatik: https://de.wikipedia.org/wiki/Regul%C3%A4re_Grammatik
+  Kontextfreie Grammatik: https://de.wikipedia.org/wiki/Kontextfreie_Grammatik
+  Yacc: https://de.wikipedia.org/wiki/Yacc
+  Der Parser-Generator Yacc: http://www.eike-meinders.de/Yacc
+  Parser für mathematische Formeln: https://www.java-forum.org/thema/parser-fuer-mathematische-formeln.12306/
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+- Kalkulationsbaum für die Formel bestimmen.
+- Variablen für Formel lösen
+- Parserbaum berechnen
+- Ergebnis ausgeben
+
+
+
+Eine Formel ist eine Menge von Zeichen, die jeweils aus einzelnen Symbolen bestehen.
+Die einzelnen, nicht weiter unterteilbaren Symbolen nennt man auch Tokens.
+Bei der Analyse eines Parsers wird es in der so genannten lexikalischen Analyse zunächst in die Folge seiner Tokens zerlegt.
+
+Kategorien von Tokens:
+- Konstanten: z.B. "Mehrwertsteuer"
+- Sonderzeichen: z.B. +, -, *, /,... für Operatoren
+- Bezeichner: alle benutzerdefinierten Namen zur Benennung von Variablen, Methode, etc.
+- Kommentare:
+
+Syntax von Grammatiken:
+Unter der Syntax einer Grammatiken versteht man die Regeln, die festlegen, was gültige Form zur Formulierung dieser Regeln sind. Es ist so genannte kontextfreien Grammatiken.
