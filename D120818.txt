@@ -35,7 +35,8 @@
   Yacc: https://de.wikipedia.org/wiki/Yacc
   Der Parser-Generator Yacc: http://www.eike-meinders.de/Yacc
   Parser für mathematische Formeln: https://www.java-forum.org/thema/parser-fuer-mathematische-formeln.12306/
-  
+   
+   
   
   
   
